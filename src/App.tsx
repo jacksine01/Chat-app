@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import io, { Socket } from "socket.io-client";
 import Messageinput from "./Messageinput";
 import Messages from "./Messages";
+import { io, Socket } from "socket.io-client";
 
 function App() {
   const [socket, setSocket] = useState<Socket>();
@@ -26,6 +25,7 @@ function App() {
       socket?.off("message", messageListener);
     };
   }, [messageListener]);
+
   return (
     <>
       {""}
